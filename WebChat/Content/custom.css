@@ -1,0 +1,18 @@
+﻿body {
+    min-width: 700px; /* Suppose you want minimum width of 1000px */
+    width: auto !important; /* Firefox will set width as auto */
+    width: 700px; /* As IE6 ignores !important it will set width as 1000px; */
+}
+
+tbody {
+    height: 500px;
+    overflow-y: auto;
+    display: block;
+}
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}

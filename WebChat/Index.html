@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>WebChat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/icon.css">
+    <link rel="stylesheet" href="Content/custom.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar justify-content-between bg-info navbar-light">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+            <i class="material-icons" style="font-size:24px;">&#xe0b7</i>
+            WebChat
+        </a>
+        <!-- LoginForm -->
+        <div id="loginForm">
+            <form class="d-flex">
+                <label for="nickname" class="col-7 col-form-label text-right">Enter your name, please!</label>
+                <input class="form-control mr-2" id="nickname" type="text" placeholder="Nickname...">
+                <button type="button" id="btnLogin" class="btn btn-warning">Go Chat!</button>
+            </form>
+        </div>
+        <!-- WelcomeLable -->
+        <span class="navbar-text text-dark" id="welcomeLable" style="display: none">
+        </span>
+    </nav>
+    <!-- /Navbar -->
+    <div class="container-fluid">
+        <div id="alert" class="alert alert-warning mt-3" style="display: none">
+        </div>
+        <!-- ChatBody -->
+        <div id="chatBody">
+            <div class="row px-3 py-3">
+                <!-- Messages -->
+                <div class="col-9 alert-secondary rounded-left">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Messages</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messages"></tbody>
+                    </table>
+                </div>
+                <!-- Online users -->
+                <div class="col-3 alert-warning rounded-right">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Online users</th>
+                            </tr>
+                        </thead>
+                        <tbody id="onlineUsers"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- InputForm -->
+            <div id="inputForm" style="display: none">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="message" placeholder="Enter text message">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-2" role="group" id="emoji">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="sendMessage" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.3.0.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <script src="Scripts/webChatUtils.js"></script>
+</body>
+</html>
